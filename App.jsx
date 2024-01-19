@@ -9,7 +9,7 @@ const App = () => {
   return (
     <View style={{marginTop: 20}}>
       <Text>hello world!</Text>
-      <MyFirstClassComponent />
+      <MyFirstClassComponent myCity={'Karachi'} myCountry={'Pakistan'} />
       <MyFirstFunctionalComponent myname={'Firdous Ali'} myCell={'1234567'} />
       <MySecondFunctionalComponent />
       <MTFC />
