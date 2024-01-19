@@ -1,7 +1,15 @@
 import {View, Text} from 'react-native';
 
-export const MyFirstFunctionalComponent = () => {
-  return <Text>this is my first functional component</Text>;
+export const MyFirstFunctionalComponent = props => {
+  const {myname, myCell} = props;
+
+  console.log(myname, myCell);
+
+  return (
+    <Text>
+      this is my first functional component. {myname} {myCell}
+    </Text>
+  );
 };
 
 // export MyFirstFunctionalComponent;

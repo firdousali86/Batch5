@@ -7,10 +7,10 @@ import MTFC, {
 
 const App = () => {
   return (
-    <View>
+    <View style={{marginTop: 20}}>
       <Text>hello world!</Text>
       <MyFirstClassComponent />
-      <MyFirstFunctionalComponent />
+      <MyFirstFunctionalComponent myname={'Firdous Ali'} myCell={'1234567'} />
       <MySecondFunctionalComponent />
       <MTFC />
     </View>
