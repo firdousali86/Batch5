@@ -1,22 +1,27 @@
-import {Text, View} from 'react-native';
-import {MyFirstClassComponent} from './components/MyFirstClassComponent';
-import MTFC, {
-  MyFirstFunctionalComponent,
-  MySecondFunctionalComponent,
-} from './components/MyFirstFunctionalComponent';
+import {Text, View, TouchableOpacity} from 'react-native';
+import {useState} from 'react';
 import UserProfileComponentF from './components/UserProfileComponentF';
 
 const App = () => {
+  const [parentFirstName, setParentFirstName] = useState('');
+
   return (
     <View style={{marginTop: 20}}>
       <UserProfileComponentF
-        firstName={'Firdous'}
+        firstName={parentFirstName}
         lastName={'Ali'}
         cell={'123456789'}
         city={'Karachi'}
         country={'Pakistan'}
         email={'firdous@firdous.com'}
       />
+
+      <TouchableOpacity
+        onPress={() => {
+          setParentFirstName('Firdous' + Date());
+        }}>
+        <Text>Button in parent control</Text>
+      </TouchableOpacity>
     </View>
   );
 };
