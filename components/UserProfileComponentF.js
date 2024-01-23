@@ -8,9 +8,9 @@ import {
 import React, {useState} from 'react';
 
 const UserProfileComponentF = props => {
-  console.log('user profile component f got rerendered');
+  // console.log('user profile component f got rerendered');
 
-  console.log(props);
+  // console.log(props);
 
   let {firstName, lastName, cell, email, city, country} = props;
 
