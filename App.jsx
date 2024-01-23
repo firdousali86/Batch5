@@ -4,15 +4,19 @@ import MTFC, {
   MyFirstFunctionalComponent,
   MySecondFunctionalComponent,
 } from './components/MyFirstFunctionalComponent';
+import UserProfileComponentF from './components/UserProfileComponentF';
 
 const App = () => {
   return (
     <View style={{marginTop: 20}}>
-      <Text>hello world!</Text>
-      <MyFirstClassComponent myCity={'Karachi'} myCountry={'Pakistan'} />
-      <MyFirstFunctionalComponent myname={'Firdous Ali'} myCell={'1234567'} />
-      <MySecondFunctionalComponent />
-      <MTFC />
+      <UserProfileComponentF
+        firstName={'Firdous'}
+        lastName={'Ali'}
+        cell={'123456789'}
+        city={'Karachi'}
+        country={'Pakistan'}
+        email={'firdous@firdous.com'}
+      />
     </View>
   );
 };
