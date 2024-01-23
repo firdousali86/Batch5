@@ -12,6 +12,8 @@ const UserProfileComponentF = props => {
 
   // console.log(props);
 
+  console.log('USER PROFILE FUNCTIONAL COMPONENT GOT RERENDERED');
+
   let {firstName, lastName, cell, email, city, country} = props;
 
   const [userFirstName, setUserFirstName] = useState(firstName);

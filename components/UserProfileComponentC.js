@@ -16,7 +16,7 @@ class UserProfileComponentC extends Component {
   }
 
   render() {
-    // const {firstName, lastName, cell, email, city, country} = this.props;
+    console.log('USER PROFILE CLASS COMPONENT GOT RERENDERED');
 
     const {
       userFirstName,
