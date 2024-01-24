@@ -4,13 +4,14 @@ import UserProfileComponentF from './components/UserProfileComponentF';
 import UserProfileComponentC from './components/UserProfileComponentC';
 import {ColorChangeDemoC, ColorChangeDemoF} from './components/ColorChangeDemo';
 import TestFlexbox from './components/TestFlexbox';
+import TestLayout from './components/TestLayout';
 
 const App = () => {
   const [parentFirstName, setParentFirstName] = useState('');
 
   return (
-    <View style={{marginTop: 20, backgroundColor: 'pink', flex: 1}}>
-      <TestFlexbox />
+    <View style={{backgroundColor: 'pink', flex: 1}}>
+      <TestLayout />
     </View>
   );
 };
