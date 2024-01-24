@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
+import styles from './styles';
 
 const UserProfileComponentF = props => {
   // console.log('user profile component f got rerendered');
@@ -100,10 +101,8 @@ const UserProfileComponentF = props => {
       {renderLocationInfo()}
 
       <TouchableOpacity
-        onPress={() => {
-          //   firstName = 'Leon';
-          //   setUserFirstName('Leon' + Date());
-        }}>
+        onPress={() => {}}
+        style={[styles.myButton, styles.myAlternateStyle]}>
         <Text>Button</Text>
       </TouchableOpacity>
     </View>
@@ -111,7 +110,3 @@ const UserProfileComponentF = props => {
 };
 
 export default UserProfileComponentF;
-
-const styles = StyleSheet.create({
-  textinput: {margin: 10, backgroundColor: 'grey', padding: 5},
-});
