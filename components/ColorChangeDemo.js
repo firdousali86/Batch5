@@ -21,6 +21,7 @@ const ColorChangeDemoF = props => {
           setBGColor('orange');
         }}
       />
+      {props.children}
     </View>
   );
 };
@@ -51,6 +52,7 @@ class ColorChangeDemoC extends React.Component {
             this.setState({backgroundColor: 'pink'});
           }}
         />
+        <View>{this.props.children}</View>
       </View>
     );
   }

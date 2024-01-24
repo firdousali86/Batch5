@@ -9,8 +9,7 @@ const App = () => {
 
   return (
     <View style={{marginTop: 20}}>
-      <ColorChangeDemoF backgroundColor={'green'} />
-      <ColorChangeDemoC backgroundColor={'red'} />
+      <UserProfileComponentF />
     </View>
   );
 };
