@@ -84,7 +84,14 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomePageScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          initialParams={{
+            sessionName: 'some initial value of session name',
+            BatchNumber: 0,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
