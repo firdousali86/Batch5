@@ -19,7 +19,10 @@ const HomePageScreen = props => {
       <TestLayout />
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('Details');
+          navigation.navigate('Details', {
+            sessionName: 'React Native',
+            BatchNumber: 5,
+          });
         }}
         style={{height: 50, justifyContent: 'center', alignItems: 'center'}}>
         <Text>Navigate Details Screen</Text>
@@ -35,10 +38,14 @@ const HomePageScreen = props => {
   );
 };
 
-const DetailsScreen = ({navigation}) => {
+const DetailsScreen = ({navigation, route}) => {
+  const {sessionName, BatchNumber} = route.params;
+
   return (
     <View>
       <Text>this is a details screen</Text>
+      <Text>{sessionName}</Text>
+      <Text>{BatchNumber}</Text>
       <Button
         title={'Navigate to yet another Details screen'}
         onPress={() => {
