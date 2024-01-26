@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {View, Text, Button, TextInput} from 'react-native';
+import {View, Text, Button, TextInput, FlatList} from 'react-native';
 import styles from './styles';
 import UserControl from './UserControl';
 
@@ -7,6 +7,20 @@ const DetailsScreen = ({navigation, route}) => {
   const {sessionName, BatchNumber} = route.params;
   const [fName, setFName] = useState('');
   const [lName, setLName] = useState('');
+
+  const renderItem = ({item, index}) => {
+    return (
+      <View
+        style={{
+          backgroundColor: 'blue',
+          margin: 5,
+          height: 70,
+          borderRadius: 8,
+        }}>
+        <Text>{item.carName}</Text>
+      </View>
+    );
+  };
 
   return (
     <View>
@@ -74,6 +88,16 @@ const DetailsScreen = ({navigation, route}) => {
             merge: true,
           });
         }}
+      />
+
+      <FlatList
+        data={[
+          {carName: 'Passo'},
+          {carName: 'Vitz'},
+          {carName: 'City'},
+          {carName: 'Civic'},
+        ]}
+        renderItem={renderItem}
       />
     </View>
   );
