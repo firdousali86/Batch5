@@ -10,7 +10,14 @@ const DetailsScreen = ({navigation, route}) => {
 
   return (
     <View>
-      <UserControl firstName={fName} lastName={lName} />
+      <UserControl
+        firstName={fName}
+        lastName={lName}
+        changePropPassing={(newFirstName, newLastName) => {
+          setFName(newFirstName);
+          setLName(newLastName);
+        }}
+      />
 
       <TextInput
         value={fName}
@@ -55,6 +62,17 @@ const DetailsScreen = ({navigation, route}) => {
         title={'Navigate to yet another Home screen'}
         onPress={() => {
           navigation.navigate('Home');
+        }}
+      />
+
+      <Button
+        title={'Pass data back'}
+        onPress={() => {
+          navigation.navigate({
+            name: 'Home',
+            params: {city: 'London', Country: 'UK'},
+            merge: true,
+          });
         }}
       />
     </View>

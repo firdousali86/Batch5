@@ -1,11 +1,17 @@
-import {} from 'react';
+import {useEffect} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import TestLayout from '../../components/TestLayout';
 
 import styles from './styles';
 
 const HomePageScreen = props => {
-  const {navigation} = props;
+  const {navigation, route} = props;
+
+  useEffect(() => {
+    if (route.params) {
+      console.log(route.params);
+    }
+  }, [route.params]);
 
   return (
     <View style={styles.container}>

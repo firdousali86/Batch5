@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useEffect} from 'react';
 
 const UserControl = props => {
@@ -26,12 +26,19 @@ const UserControl = props => {
 
   console.log('usercontrol got rerendered');
 
-  const {firstName, lastName} = props;
+  const {firstName, lastName, changePropPassing} = props;
 
   return (
-    <View>
+    <View style={{backgroundColor: 'red'}}>
       <Text>{firstName}</Text>
       <Text>{lastName}</Text>
+
+      <TouchableOpacity
+        onPress={() => {
+          changePropPassing('Firdous', 'Ali');
+        }}>
+        <Text>Change the props value</Text>
+      </TouchableOpacity>
     </View>
   );
 };
