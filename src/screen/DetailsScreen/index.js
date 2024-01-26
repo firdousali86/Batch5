@@ -1,12 +1,32 @@
-import {} from 'react';
-import {View, Text, Button} from 'react-native';
+import {useState} from 'react';
+import {View, Text, Button, TextInput} from 'react-native';
 import styles from './styles';
+import UserControl from './UserControl';
 
 const DetailsScreen = ({navigation, route}) => {
   const {sessionName, BatchNumber} = route.params;
+  const [fName, setFName] = useState('');
+  const [lName, setLName] = useState('');
 
   return (
     <View>
+      <UserControl firstName={fName} lastName={lName} />
+
+      <TextInput
+        value={fName}
+        placeholder="First Name"
+        onChangeText={ct => {
+          setFName(ct);
+        }}
+      />
+      <TextInput
+        value={lName}
+        placeholder="Last Name"
+        onChangeText={ct => {
+          setLName(ct);
+        }}
+      />
+
       <Text>this is a details screen</Text>
       <Text>{sessionName}</Text>
       <Text>{BatchNumber}</Text>

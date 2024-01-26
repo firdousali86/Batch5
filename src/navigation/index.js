@@ -9,7 +9,6 @@ const Stack = createNativeStackNavigator();
 const Navigation = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen
         name="Details"
         component={DetailsScreen}
@@ -18,6 +17,7 @@ const Navigation = () => {
           BatchNumber: 0,
         }}
       />
+      <Stack.Screen name="Home" component={HomeScreen} />
     </Stack.Navigator>
   );
 };
