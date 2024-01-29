@@ -1,23 +1,42 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {HomeScreen, DetailsScreen} from '../screen';
+import {HomeScreen, DetailsScreen, SignupScreen, LoginScreen} from '../screen';
 
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const renderMainStack = () => {
+    return (
+      <Stack.Group>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          initialParams={{
+            sessionName: 'some initial value of session name',
+            BatchNumber: 0,
+          }}
+        />
+      </Stack.Group>
+    );
+  };
+
+  const renderAuthStack = () => {
+    return (
+      <Stack.Group>
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Signup" component={SignupScreen} />
+      </Stack.Group>
+    );
+  };
+
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="Details"
-        component={DetailsScreen}
-        initialParams={{
-          sessionName: 'some initial value of session name',
-          BatchNumber: 0,
-        }}
-      />
-      <Stack.Screen name="Home" component={HomeScreen} />
+      {isLoggedIn ? renderMainStack() : renderAuthStack()}
     </Stack.Navigator>
   );
 };

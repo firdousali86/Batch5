@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {View, Text, Button, TextInput, FlatList} from 'react-native';
+import {View, Text, Button, TextInput, FlatList, Modal} from 'react-native';
 import styles from './styles';
 import UserControl from './UserControl';
 
@@ -7,6 +7,7 @@ const DetailsScreen = ({navigation, route}) => {
   const {sessionName, BatchNumber} = route.params;
   const [fName, setFName] = useState('');
   const [lName, setLName] = useState('');
+  const [modalVisible, setModalVisible] = useState(false);
 
   const renderItem = ({item, index}) => {
     return (
@@ -19,6 +20,53 @@ const DetailsScreen = ({navigation, route}) => {
         }}>
         <Text>{item.carName}</Text>
       </View>
+    );
+  };
+
+  const renderModal = () => {
+    return (
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+          setModalVisible(!modalVisible);
+        }}>
+        <View
+          style={{
+            width: 300,
+            height: 500,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: 'grey',
+          }}>
+          <View>
+            <Text>Test Modal</Text>
+            <Text>Sample text</Text>
+          </View>
+          <Button
+            title={'Hide Modal'}
+            onPress={() => {
+              setModalVisible(false);
+            }}
+          />
+        </View>
+      </Modal>
+    );
+  };
+
+  const renderFlatList = () => {
+    return (
+      <FlatList
+        data={[
+          {carName: 'Passo'},
+          {carName: 'Vitz'},
+          {carName: 'City'},
+          {carName: 'Civic'},
+        ]}
+        renderItem={renderItem}
+      />
     );
   };
 
@@ -90,15 +138,15 @@ const DetailsScreen = ({navigation, route}) => {
         }}
       />
 
-      <FlatList
-        data={[
-          {carName: 'Passo'},
-          {carName: 'Vitz'},
-          {carName: 'City'},
-          {carName: 'Civic'},
-        ]}
-        renderItem={renderItem}
+      <Button
+        title={'Show Modal'}
+        onPress={() => {
+          setModalVisible(true);
+        }}
       />
+
+      {renderFlatList()}
+      {renderModal()}
     </View>
   );
 };
