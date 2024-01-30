@@ -33,6 +33,12 @@ const HomePageScreen = props => {
         style={styles.button1}>
         <Text>Push Details Screen</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('LifecyclePrac');
+        }}>
+        <Text>LifecyclePrac</Text>
+      </TouchableOpacity>
     </View>
   );
 };

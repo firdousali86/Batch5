@@ -2,17 +2,24 @@ import {StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {HomeScreen, DetailsScreen, SignupScreen, LoginScreen} from '../screen';
+import {
+  HomeScreen,
+  DetailsScreen,
+  SignupScreen,
+  LoginScreen,
+  LifecyclePracScreen,
+} from '../screen';
 
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const renderMainStack = () => {
     return (
       <Stack.Group>
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="LifecyclePrac" component={LifecyclePracScreen} />
         <Stack.Screen
           name="Details"
           component={DetailsScreen}
