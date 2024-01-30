@@ -2,7 +2,7 @@ import {Text, View} from 'react-native';
 import React, {Component, PureComponent} from 'react';
 import _ from 'lodash';
 
-export class PracClassComp extends PureComponent {
+export class PracClassComp extends Component {
   constructor(props) {
     super(props);
 
@@ -13,12 +13,17 @@ export class PracClassComp extends PureComponent {
     console.log('this is componentdidmount');
   }
 
-  //   shouldComponentUpdate(nextProps, nextState) {
-  //     console.log('this is shouldcomponentupdate');
-
-  //     // return true;
-  //     return !_.isEqual(nextProps, this.props);
-  //   }
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('this is shouldcomponentupdate');
+    console.log(nextProps);
+    // return true;
+    // return !_.isEqual(nextProps, this.props);
+    return nextProps.firstProp !== this.props.firstProp;
+    // return (
+    //   nextProps.userObject.addressObject.streetNumber !==
+    //   this.props.userObject.addressObject.streetNumber
+    // );
+  }
 
   componentDidUpdate(prevProps) {
     console.log('this is componentdidupdate');
@@ -47,7 +52,7 @@ export class PracClassComp extends PureComponent {
     return (
       <View style={{backgroundColor: 'yellow'}}>
         <Text>PracClassComp</Text>
-        <Text>{this.props.changedTextVal}</Text>
+        <Text>{this.props.firstProp}</Text>
       </View>
     );
   }

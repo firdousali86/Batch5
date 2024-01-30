@@ -30,7 +30,10 @@ export class LifecyclePracScreen extends Component {
           }}
           placeholder="another Text Value"
         />
-        <PracClassComp />
+        <PracClassComp
+          firstProp={this.state.textValue}
+          secondProp={this.state.anotherTextValue}
+        />
       </View>
     );
   }
