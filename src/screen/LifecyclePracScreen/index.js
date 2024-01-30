@@ -1,6 +1,7 @@
 import {Text, View, TextInput} from 'react-native';
 import React, {Component} from 'react';
 import PracClassComp from './PracClassComp';
+import PracFuncComp from './PracFuncComp';
 
 export class LifecyclePracScreen extends Component {
   constructor(props) {
@@ -31,6 +32,10 @@ export class LifecyclePracScreen extends Component {
           placeholder="another Text Value"
         />
         <PracClassComp
+          firstProp={this.state.textValue}
+          secondProp={this.state.anotherTextValue}
+        />
+        <PracFuncComp
           firstProp={this.state.textValue}
           secondProp={this.state.anotherTextValue}
         />
