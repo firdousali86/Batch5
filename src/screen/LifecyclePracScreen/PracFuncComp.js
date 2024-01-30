@@ -1,5 +1,5 @@
 import {StyleSheet, Text, View, Button} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, memo} from 'react';
 
 const PracFuncComp = props => {
   const [dateTime, setDateTime] = useState(Date.now());
@@ -16,6 +16,8 @@ const PracFuncComp = props => {
   useEffect(() => {
     console.log('this is useeffect a.k.a componentdidupdate');
   }, [props.secondProp]);
+
+  console.log('functional component got rerendered');
 
   return (
     <View style={{backgroundColor: 'blue'}}>
@@ -37,6 +39,8 @@ const PracFuncComp = props => {
   );
 };
 
-export default PracFuncComp;
+export default memo(PracFuncComp, (prevProps, nextProps) => {
+  return prevProps.firstProp === nextProps.firstProp;
+});
 
 const styles = StyleSheet.create({});

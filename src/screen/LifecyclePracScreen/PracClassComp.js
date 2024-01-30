@@ -25,9 +25,9 @@ export class PracClassComp extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log('this is shouldcomponentupdate');
-    console.log(nextProps);
-    return true;
+    // console.log('this is shouldcomponentupdate');
+    // console.log(nextProps);
+    return false;
     // return !_.isEqual(nextProps, this.props);
     // return nextProps.firstProp !== this.props.firstProp;
     // return (
@@ -63,7 +63,7 @@ export class PracClassComp extends Component {
   }
 
   render() {
-    console.log('this is render');
+    // console.log('this is render');
 
     return (
       <View style={{backgroundColor: 'yellow'}}>
