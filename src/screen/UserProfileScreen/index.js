@@ -28,7 +28,7 @@ const UserProfileScreen = props => {
     console.log('location test button got pressed');
   }, []);
 
-  const calculation = useMemo(() => expensiveCalculation(count), [count]);
+  const calculation = useMemo(() => expensiveCalculation(count), []);
 
   const increment = () => {
     setCount(c => c + 1);
