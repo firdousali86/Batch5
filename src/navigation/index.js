@@ -8,6 +8,7 @@ import {
   SignupScreen,
   LoginScreen,
   LifecyclePracScreen,
+  UserProfileScreen,
 } from '../screen';
 
 const Stack = createNativeStackNavigator();
@@ -18,6 +19,7 @@ const Navigation = () => {
   const renderMainStack = () => {
     return (
       <Stack.Group>
+        <Stack.Screen name="UserProfile" component={UserProfileScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="LifecyclePrac" component={LifecyclePracScreen} />
         <Stack.Screen

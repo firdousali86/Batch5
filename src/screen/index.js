@@ -3,6 +3,7 @@ import DetailsScreen from './DetailsScreen';
 import SignupScreen from './SignupScreen';
 import LoginScreen from './LoginScreen';
 import LifecyclePracScreen from './LifecyclePracScreen';
+import UserProfileScreen from './UserProfileScreen';
 
 export {
   HomeScreen,
@@ -10,4 +11,5 @@ export {
   SignupScreen,
   LoginScreen,
   LifecyclePracScreen,
+  UserProfileScreen,
 };
