@@ -1,6 +1,7 @@
 import {StyleSheet, Text, View, Button} from 'react-native';
 import React, {useEffect} from 'react';
 import ApiHelper from '../../helpers/ApiHelper';
+import {kApiTodos} from '../../config/WebService';
 
 const FetchScreen = () => {
   useEffect(() => {
@@ -8,7 +9,7 @@ const FetchScreen = () => {
   }, []);
 
   const fetchData = async () => {
-    ApiHelper.get('/todos').then(data => {
+    ApiHelper.get(kApiTodos).then(data => {
       console.log(data);
     });
   };
