@@ -6,6 +6,7 @@ import LifecyclePracScreen from './LifecyclePracScreen';
 import UserProfileScreen from './UserProfileScreen';
 import PropDrillingScreen from './PropDrillingScreen';
 import UseRefTestScreen from './UseRefTestScreen';
+import FetchScreen from './FetchScreen';
 
 export {
   HomeScreen,
@@ -16,4 +17,5 @@ export {
   UserProfileScreen,
   PropDrillingScreen,
   UseRefTestScreen,
+  FetchScreen,
 };
