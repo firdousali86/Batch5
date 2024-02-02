@@ -1,10 +1,16 @@
 import {StyleSheet, Text, View, TextInput, Button} from 'react-native';
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 
 const UseRefTestScreen = () => {
   const input1Ref = useRef(null);
   const input2Ref = useRef(null);
   const input3Ref = useRef(null);
+
+  const [datetime, setdatetime] = useState(Date.now());
+
+  let counterVar = useRef(0);
+
+  console.log('use ref screen rerender');
 
   return (
     <View>
@@ -31,6 +37,16 @@ const UseRefTestScreen = () => {
         onPress={() => {
           //   input3Ref.current.focus();
           input2Ref.current.clear();
+        }}
+      />
+      <Button
+        title={'Increment'}
+        onPress={() => {
+          counterVar.current += 1;
+
+          console.log(counterVar.current);
+
+          setdatetime(Date.now());
         }}
       />
     </View>
