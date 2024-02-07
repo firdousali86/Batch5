@@ -2,6 +2,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import Navigation from './navigation';
 import ApiHelper from './helpers/ApiHelper';
 import {useEffect} from 'react';
+import store from './store';
+import {Provider} from 'react-redux';
 
 const App = () => {
   useEffect(() => {
@@ -9,9 +11,11 @@ const App = () => {
   }, []);
 
   return (
-    <NavigationContainer>
-      <Navigation />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Navigation />
+      </NavigationContainer>
+    </Provider>
   );
 };
 

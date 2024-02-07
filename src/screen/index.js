@@ -7,6 +7,7 @@ import UserProfileScreen from './UserProfileScreen';
 import PropDrillingScreen from './PropDrillingScreen';
 import UseRefTestScreen from './UseRefTestScreen';
 import FetchScreen from './FetchScreen';
+import ReduxScreen from './ReduxScreen';
 
 export {
   HomeScreen,
@@ -18,4 +19,5 @@ export {
   PropDrillingScreen,
   UseRefTestScreen,
   FetchScreen,
+  ReduxScreen,
 };

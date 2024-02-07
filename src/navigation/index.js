@@ -12,6 +12,7 @@ import {
   PropDrillingScreen,
   UseRefTestScreen,
   FetchScreen,
+  ReduxScreen,
 } from '../screen';
 
 const Stack = createNativeStackNavigator();
@@ -22,6 +23,7 @@ const Navigation = () => {
   const renderMainStack = () => {
     return (
       <Stack.Group>
+        <Stack.Screen name="ReduxScreen" component={ReduxScreen} />
         <Stack.Screen name="FetchScreen" component={FetchScreen} />
         <Stack.Screen name="UseRefTestScreen" component={UseRefTestScreen} />
         <Stack.Screen name="PropDrilling" component={PropDrillingScreen} />
