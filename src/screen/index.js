@@ -9,6 +9,7 @@ import UseRefTestScreen from './UseRefTestScreen';
 import FetchScreen from './FetchScreen';
 import ReduxScreen from './ReduxScreen';
 import CartScreen from './CartScreen';
+import ReduxClassScreen from './ReduxClassScreen';
 
 export {
   HomeScreen,
@@ -22,4 +23,5 @@ export {
   FetchScreen,
   ReduxScreen,
   CartScreen,
+  ReduxClassScreen,
 };

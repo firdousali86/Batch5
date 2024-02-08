@@ -15,6 +15,7 @@ import {
   FetchScreen,
   ReduxScreen,
   CartScreen,
+  ReduxClassScreen,
 } from '../screen';
 import {clearCart} from '../features/cart/cartSlice';
 
@@ -28,6 +29,20 @@ const Navigation = props => {
   const renderMainStack = () => {
     return (
       <Stack.Group>
+        <Stack.Screen
+          name="ReduxClassScreen"
+          component={ReduxClassScreen}
+          options={{
+            headerRight: () => (
+              <Button
+                title={'Cart'}
+                onPress={() => {
+                  navigation.navigate('CartScreen');
+                }}
+              />
+            ),
+          }}
+        />
         <Stack.Screen
           name="ReduxScreen"
           component={ReduxScreen}
