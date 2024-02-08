@@ -2,7 +2,7 @@ import {StyleSheet, Text, View, Button} from 'react-native';
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
+import {useDispatch} from 'react-redux';
 import {
   HomeScreen,
   DetailsScreen,
@@ -16,10 +16,12 @@ import {
   ReduxScreen,
   CartScreen,
 } from '../screen';
+import {clearCart} from '../features/cart/cartSlice';
 
 const Stack = createNativeStackNavigator();
 
 const Navigation = props => {
+  const dispatch = useDispatch();
   const navigation = useNavigation();
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
@@ -40,7 +42,20 @@ const Navigation = props => {
             ),
           }}
         />
-        <Stack.Screen name="CartScreen" component={CartScreen} />
+        <Stack.Screen
+          name="CartScreen"
+          component={CartScreen}
+          options={{
+            headerRight: () => (
+              <Button
+                title={'Clear Cart'}
+                onPress={() => {
+                  dispatch(clearCart());
+                }}
+              />
+            ),
+          }}
+        />
         <Stack.Screen name="FetchScreen" component={FetchScreen} />
         <Stack.Screen name="UseRefTestScreen" component={UseRefTestScreen} />
         <Stack.Screen name="PropDrilling" component={PropDrillingScreen} />

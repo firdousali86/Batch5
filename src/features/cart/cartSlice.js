@@ -22,11 +22,14 @@ export const cartSlice = createSlice({
         state.cartItems.push({item: itemToAdd, quantity: 1});
       }
     },
+    clearCart: state => {
+      state.cartItems = [];
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const {addToCart} = cartSlice.actions;
+export const {addToCart, clearCart} = cartSlice.actions;
 
 export default cartSlice.reducer;
 
@@ -34,5 +37,7 @@ export default cartSlice.reducer;
 //   {
 //     item: {name: 'sdfsd', price: 44},
 //     quantity: 2,
+// lineTotal:1000
 //   },
+// totalPrice:0
 // ];
