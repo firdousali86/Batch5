@@ -46,6 +46,7 @@ export class ReduxClassScreen extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
+        <Text>{this.state.something.something}</Text>
         <FlatList
           style={{flex: 1}}
           data={itemList}

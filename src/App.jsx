@@ -4,6 +4,7 @@ import ApiHelper from './helpers/ApiHelper';
 import {useEffect} from 'react';
 import store from './store';
 import {Provider} from 'react-redux';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const App = () => {
   useEffect(() => {
@@ -11,11 +12,13 @@ const App = () => {
   }, []);
 
   return (
-    <Provider store={store}>
-      <NavigationContainer>
-        <Navigation />
-      </NavigationContainer>
-    </Provider>
+    <ErrorBoundary>
+      <Provider store={store}>
+        <NavigationContainer>
+          <Navigation />
+        </NavigationContainer>
+      </Provider>
+    </ErrorBoundary>
   );
 };
 
