@@ -8,6 +8,7 @@ import PropDrillingScreen from './PropDrillingScreen';
 import UseRefTestScreen from './UseRefTestScreen';
 import FetchScreen from './FetchScreen';
 import ReduxScreen from './ReduxScreen';
+import CartScreen from './CartScreen';
 
 export {
   HomeScreen,
@@ -20,4 +21,5 @@ export {
   UseRefTestScreen,
   FetchScreen,
   ReduxScreen,
+  CartScreen,
 };
