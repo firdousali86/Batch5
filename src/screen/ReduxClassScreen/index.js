@@ -14,6 +14,7 @@ import {
   incrementByAmount,
 } from '../../features/counter/counterSlice';
 import {addToCart} from '../../features/cart/cartSlice';
+import PersistanceHelper from '../../helpers/PersistanceHelper';
 
 const itemList = [
   {id: 1, name: 'Macbook', details: '', price: 2500},
@@ -29,6 +30,17 @@ export class ReduxClassScreen extends Component {
     super(props);
 
     this.state = {inputVal: 0};
+  }
+
+  componentDidMount() {
+    // PersistanceHelper.setValue('firstName', 'Firdous');
+    // PersistanceHelper.setValue('lastName', 'Ali');
+    // PersistanceHelper.setObject('personalDetails', {
+    //   firstName: 'Firdous',
+    //   lastName: 'Ali',
+    //   cell: '123456',
+    //   email: 'sss@dfdf.com',
+    // });
   }
 
   render() {

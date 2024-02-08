@@ -1,8 +1,23 @@
 import {StyleSheet, Text, View, FlatList} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useSelector} from 'react-redux';
+import PersistanceHelper from '../../helpers/PersistanceHelper';
 
 const CartScreen = () => {
+  useEffect(() => {
+    PersistanceHelper.getValue('firstName').then(value => {
+      console.log(value);
+    });
+
+    PersistanceHelper.getValue('lastName').then(value => {
+      console.log(value);
+    });
+
+    PersistanceHelper.getObject('personalDetails').then(resultObj => {
+      console.log(resultObj);
+    });
+  }, []);
+
   const cartItems = useSelector(state => state.cart.cartItems);
 
   return (
