@@ -1,4 +1,11 @@
-import {Text, View, Button, TextInput} from 'react-native';
+import {
+  Text,
+  View,
+  Button,
+  FlatList,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {
@@ -6,6 +13,16 @@ import {
   decrement,
   incrementByAmount,
 } from '../../features/counter/counterSlice';
+import {addToCart} from '../../features/cart/cartSlice';
+
+const itemList = [
+  {id: 1, name: 'Macbook', details: '', price: 2500},
+  {id: 2, name: 'iPhone', details: '', price: 1500},
+  {id: 3, name: 'iPad', details: '', price: 800},
+  {id: 4, name: 'Tripod', details: '', price: 50},
+  {id: 5, name: 'Newtonion Telescope', details: '', price: 500},
+  {id: 6, name: 'LED Monitor', details: '', price: 200},
+];
 
 export class ReduxClassScreen extends Component {
   constructor(props) {
@@ -16,7 +33,51 @@ export class ReduxClassScreen extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{flex: 1}}>
+        <FlatList
+          style={{flex: 1}}
+          data={itemList}
+          renderItem={({item, index}) => {
+            return (
+              <View
+                style={{
+                  backgroundColor: 'pink',
+                  margin: 5,
+                  justifyContent: 'center',
+                  paddingHorizontal: 10,
+                }}>
+                <View
+                  style={{
+                    marginHorizontal: 10,
+                    backgroundColor: 'red',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }}>
+                  <Text>{item.name}</Text>
+                  <Text>{item.details}</Text>
+                  <Text>{item.price}</Text>
+                </View>
+                <View style={{justifyContent: 'center', alignItems: 'center'}}>
+                  <TouchableOpacity
+                    onPress={() => {
+                      this.props.addToCart(item);
+                    }}
+                    style={{
+                      height: 50,
+                      width: 100,
+                      backgroundColor: 'yellow',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}>
+                    <Text>Add to cart</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            );
+          }}
+        />
+
         <Text style={{fontSize: 25}}>{this.props.counter.value}</Text>
 
         <TextInput
@@ -49,8 +110,8 @@ export class ReduxClassScreen extends Component {
   }
 }
 
-const mapStateToProps = state => ({counter: state.counter});
+const mapStateToProps = state => ({counter: state.counter, cart: state.cart});
 
-const actions = {increment, decrement, incrementByAmount};
+const actions = {increment, decrement, incrementByAmount, addToCart};
 
 export default connect(mapStateToProps, actions)(ReduxClassScreen);
