@@ -1,8 +1,8 @@
 import {StyleSheet, Text, View, Button} from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {
   HomeScreen,
   DetailsScreen,
@@ -22,9 +22,15 @@ import {clearCart} from '../features/cart/cartSlice';
 const Stack = createNativeStackNavigator();
 
 const Navigation = props => {
+  const user = useSelector(state => state.user);
   const dispatch = useDispatch();
   const navigation = useNavigation();
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  const [isLoggedIn, setIsLoggedIn] = useState(user.data.email ? true : false);
+
+  useEffect(() => {
+    setIsLoggedIn(user.data?.email ? true : false);
+  }, [user]);
 
   const renderMainStack = () => {
     return (

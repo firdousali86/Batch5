@@ -6,19 +6,39 @@ import {
   TouchableOpacity,
   Button,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
+import {login} from '../../features/user/userSlice';
+import {useDispatch} from 'react-redux';
 
 const LoginScreen = ({navigation}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch();
+
   return (
     <View>
-      <TextInput value={''} onChangeText={ct => {}} placeholder="Enter Email" />
       <TextInput
-        value={''}
-        onChangeText={ct => {}}
+        value={email}
+        onChangeText={ct => {
+          setEmail(ct);
+        }}
+        placeholder="Enter Email"
+        style={styles.textInput}
+      />
+      <TextInput
+        value={password}
+        onChangeText={ct => {
+          setPassword(ct);
+        }}
         placeholder="Enter Password"
+        style={styles.textInput}
       />
 
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          dispatch(login({email, password}));
+        }}>
         <Text>Login</Text>
       </TouchableOpacity>
 
@@ -34,4 +54,10 @@ const LoginScreen = ({navigation}) => {
 
 export default LoginScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  textInput: {
+    backgroundColor: 'pink',
+    height: 40,
+    margin: 5,
+  },
+});

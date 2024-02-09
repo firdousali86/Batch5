@@ -14,6 +14,7 @@ import {
   incrementByAmount,
 } from '../../features/counter/counterSlice';
 import {addToCart} from '../../features/cart/cartSlice';
+import {logout} from '../../features/user/userSlice';
 import PersistanceHelper from '../../helpers/PersistanceHelper';
 
 const itemList = [
@@ -90,6 +91,13 @@ export class ReduxClassScreen extends Component {
           }}
         />
 
+        <Button
+          title={'Logout'}
+          onPress={() => {
+            this.props.logout();
+          }}
+        />
+
         <Text style={{fontSize: 25}}>{this.props.counter.value}</Text>
 
         <TextInput
@@ -124,6 +132,6 @@ export class ReduxClassScreen extends Component {
 
 const mapStateToProps = state => ({counter: state.counter, cart: state.cart});
 
-const actions = {increment, decrement, incrementByAmount, addToCart};
+const actions = {increment, decrement, incrementByAmount, addToCart, logout};
 
 export default connect(mapStateToProps, actions)(ReduxClassScreen);
