@@ -15,7 +15,7 @@ import {
 } from '../../features/counter/counterSlice';
 import {addToCart} from '../../features/cart/cartSlice';
 import {logout} from '../../features/user/userSlice';
-import PersistanceHelper from '../../helpers/PersistanceHelper';
+import {PersistanceHelper, DataHelper} from '../../helpers';
 import ItemList from '../../controls/ItemList';
 import {MyFirstClassComponent} from '../../components/MyFirstClassComponent';
 
@@ -47,6 +47,8 @@ export class ReduxClassScreen extends Component {
   }
 
   render() {
+    DataHelper.getIncrementValue();
+
     return (
       <View style={{flex: 1}}>
         <MyFirstClassComponent myCity={33} myCountry={666} />
@@ -74,13 +76,15 @@ export class ReduxClassScreen extends Component {
         <Button
           title={'Increment'}
           onPress={() => {
-            this.props.increment();
+            // this.props.increment();
+            DataHelper.incrementValue();
           }}
         />
         <Button
           title={'Decrement'}
           onPress={() => {
-            this.props.decrement();
+            // this.props.decrement();
+            DataHelper.decrementValue();
           }}
         />
         <Button
