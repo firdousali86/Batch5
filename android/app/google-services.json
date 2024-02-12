@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1064615829929",
+    "project_id": "batch5-bfcf2",
+    "storage_bucket": "batch5-bfcf2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064615829929:android:06ed3c63f742fc4162e4b8",
+        "android_client_info": {
+          "package_name": "com.itc.batch5"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMMx7krrA4-B9owEhAXFHOsBnwB38vokk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
