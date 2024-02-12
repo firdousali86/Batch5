@@ -30,6 +30,55 @@ const ReduxScreen = () => {
   const dispatch = useDispatch();
   const counterValue = useSelector(state => state.counter.value);
 
+  // let somename: string;
+  // let somenumber: number;
+  // let mycourses: string[];
+  // let mymarks: number[];
+  // let ssdfdf: boolean[];
+
+  // somename = 'abcd';
+
+  // mycourses = ['maths', 'science', 'english', 456];
+
+  // ssdfdf = [true, true, false, 'ssd'];
+
+  // type Person = {
+  //   name: string;
+  //   age: number;
+  //   email?: string;
+  //   isDrivingLicense?: boolean;
+  // };
+
+  // let person: Person = {name: 'Firdous Ali', age: 35};
+
+  // // person = {
+  // //   name: 'Firdous Ali',
+  // //   age: 35,
+  // // };
+
+  // let people: Person[];
+
+  // people = [
+  //   {name: 'person1', age: 23},
+  //   {name: 'person2', age: 24},
+  //   {name: 'person3', age: 25},
+  // ];
+
+  // type myVariable = string[] | number[];
+
+  // let somevariable: myVariable = [1, 2, 3, '4'];
+
+  // const addNumber = (a: number, b: number): number => {
+  //   return a + b;
+  // };
+
+  // const addString = (a: string, b: string): string => {
+  //   return a + b;
+  // };
+
+  // addNumber(3, 4); //7
+  // addString('3', '4'); //34
+
   return (
     <View style={{flex: 1}}>
       <FlatList

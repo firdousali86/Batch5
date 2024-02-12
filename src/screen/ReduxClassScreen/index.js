@@ -16,6 +16,8 @@ import {
 import {addToCart} from '../../features/cart/cartSlice';
 import {logout} from '../../features/user/userSlice';
 import PersistanceHelper from '../../helpers/PersistanceHelper';
+import ItemList from '../../controls/ItemList';
+import {MyFirstClassComponent} from '../../components/MyFirstClassComponent';
 
 const itemList = [
   {id: 1, name: 'Macbook', details: '', price: 2500},
@@ -47,50 +49,12 @@ export class ReduxClassScreen extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <FlatList
-          style={{flex: 1}}
-          data={itemList}
-          renderItem={({item, index}) => {
-            return (
-              <View
-                style={{
-                  backgroundColor: 'pink',
-                  margin: 5,
-                  justifyContent: 'center',
-                  paddingHorizontal: 10,
-                }}>
-                <View
-                  style={{
-                    marginHorizontal: 10,
-                    backgroundColor: 'red',
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                  }}>
-                  <Text>{item.name}</Text>
-                  <Text>{item.details}</Text>
-                  <Text>{item.price}</Text>
-                </View>
-                <View style={{justifyContent: 'center', alignItems: 'center'}}>
-                  <TouchableOpacity
-                    onPress={() => {
-                      this.props.addToCart(item);
-                    }}
-                    style={{
-                      height: 50,
-                      width: 100,
-                      backgroundColor: 'yellow',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    }}>
-                    <Text>Add to cart</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            );
-          }}
+        <MyFirstClassComponent myCity={33} myCountry={666} />
+        <ItemList
+          listBG={'black'}
+          itemList={itemList}
+          addToCart={this.props.addToCart}
         />
-
         <Button
           title={'Logout'}
           onPress={() => {

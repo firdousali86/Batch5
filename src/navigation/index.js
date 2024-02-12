@@ -106,7 +106,7 @@ const Navigation = props => {
 
   return (
     <Stack.Navigator>
-      {isLoggedIn ? renderMainStack() : renderAuthStack()}
+      {true ? renderMainStack() : renderAuthStack()}
     </Stack.Navigator>
   );
 };
