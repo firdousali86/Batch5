@@ -106,6 +106,18 @@ export class ReduxClassScreen extends Component {
               });
           }}
         />
+        <Button
+          title={'Set to MMKV'}
+          onPress={() => {
+            PersistanceHelper.setValue('testkey', 'testvalue');
+          }}
+        />
+        <Button
+          title={'Get from MMKV'}
+          onPress={() => {
+            const recievedVal = PersistanceHelper.getValue('testkey');
+          }}
+        />
       </View>
     );
   }

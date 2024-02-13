@@ -5,17 +5,18 @@ import PersistanceHelper from '../../helpers/PersistanceHelper';
 
 const CartScreen = () => {
   useEffect(() => {
-    PersistanceHelper.getValue('firstName').then(value => {
-      console.log(value);
-    });
-
-    PersistanceHelper.getValue('lastName').then(value => {
-      console.log(value);
-    });
-
-    PersistanceHelper.getObject('personalDetails').then(resultObj => {
-      console.log(resultObj);
-    });
+    // PersistanceHelper.getValue('firstName').then(value => {
+    //   console.log(value);
+    // });
+    // PersistanceHelper.getValue('lastName').then(value => {
+    //   console.log(value);
+    // });
+    // PersistanceHelper.getObject('personalDetails').then(resultObj => {
+    //   console.log(resultObj);
+    // });
+    console.log(PersistanceHelper.getValue('firstName'));
+    console.log(PersistanceHelper.getValue('lastName'));
+    console.log(PersistanceHelper.getValue('personalDetails'));
   }, []);
 
   const cartItems = useSelector(state => state.cart.cartItems);
