@@ -1,9 +1,15 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
+import SInfo from 'react-native-sensitive-info';
 
 class PersistanceHelper {
   getValue = async key => {
     try {
-      const value = await AsyncStorage.getItem(key);
+      // const value = await AsyncStorage.getItem(key);
+      const value = await SInfo.getItem(key, {
+        sharedPreferencesName: 'mySharedPrefs',
+        keychainService: 'myKeychain',
+      });
+
       if (value !== null) {
         // value previously stored
         return value;
@@ -16,7 +22,11 @@ class PersistanceHelper {
 
   setValue = (key, value) => {
     try {
-      AsyncStorage.setItem(key, value);
+      // AsyncStorage.setItem(key, value);
+      SInfo.setItem(key, value, {
+        sharedPreferencesName: 'mySharedPrefs',
+        keychainService: 'myKeychain',
+      });
     } catch (e) {
       // saving error
       console.log(e);

@@ -18,6 +18,7 @@ import {logout} from '../../features/user/userSlice';
 import {PersistanceHelper, DataHelper} from '../../helpers';
 import ItemList from '../../controls/ItemList';
 import {MyFirstClassComponent} from '../../components/MyFirstClassComponent';
+import * as Keychain from 'react-native-keychain';
 
 const itemList = [
   {id: 1, name: 'Macbook', details: '', price: 2500},
@@ -91,6 +92,18 @@ export class ReduxClassScreen extends Component {
           title={'Increment by amount'}
           onPress={() => {
             this.props.incrementByAmount(this.state.inputVal);
+          }}
+        />
+        <Button
+          title={'Fetch creds'}
+          onPress={() => {
+            Keychain.getInternetCredentials('com.itc.batch5.secure')
+              .then(success => {
+                console.log(success);
+              })
+              .catch(err => {
+                console.log(err);
+              });
           }}
         />
       </View>

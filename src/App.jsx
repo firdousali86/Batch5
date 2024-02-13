@@ -8,6 +8,8 @@ import ErrorBoundary from './components/ErrorBoundary';
 import {PersistGate} from 'redux-persist/integration/react';
 import {DataHelper} from './helpers';
 
+import * as Keychain from 'react-native-keychain';
+
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -17,6 +19,20 @@ const App = () => {
       DataHelper.setStore(store);
     }
   }, [isLoading]);
+
+  useEffect(() => {
+    // Keychain.setInternetCredentials(
+    //   'com.itc.batch5.secure',
+    //   'firdousali',
+    //   '123456',
+    // )
+    //   .then(success => {
+    //     console.log(success);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
+  }, []);
 
   return (
     <Provider store={store}>
