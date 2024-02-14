@@ -8,6 +8,8 @@ import persistReducer from 'redux-persist/es/persistReducer';
 import storage from 'redux-persist/lib/storage';
 import persistStore from 'redux-persist/lib/persistStore';
 import reducers from './features/reducers';
+import sagas from './sagas';
+import createSagaMiddleware from 'redux-saga';
 
 import {createLogger} from 'redux-logger';
 
@@ -25,9 +27,14 @@ const logger = createLogger({
   diff: true,
 });
 
+const sagaMiddleware = createSagaMiddleware();
+
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(logger),
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware().concat(logger, sagaMiddleware),
 });
+
+sagaMiddleware.run(sagas);
 
 export const persistor = persistStore(store);
