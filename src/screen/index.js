@@ -10,6 +10,7 @@ import FetchScreen from './FetchScreen';
 import ReduxScreen from './ReduxScreen';
 import CartScreen from './CartScreen';
 import ReduxClassScreen from './ReduxClassScreen';
+import TestSagaScreen from './TestSagaScreen';
 
 export {
   HomeScreen,
@@ -24,4 +25,5 @@ export {
   ReduxScreen,
   CartScreen,
   ReduxClassScreen,
+  TestSagaScreen,
 };

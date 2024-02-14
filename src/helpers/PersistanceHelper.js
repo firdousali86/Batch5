@@ -1,15 +1,15 @@
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 // import SInfo from 'react-native-sensitive-info';
-import {MMKV} from 'react-native-mmkv';
+// import {MMKV} from 'react-native-mmkv';
 
 class PersistanceHelper {
   storage = undefined;
 
   constructor() {
-    this.storage = new MMKV({
-      id: `user-1234-storage`,
-      // path: `/storage`,
-    });
+    // this.storage = new MMKV({
+    //   id: `user-1234-storage`,
+    //   // path: `/storage`,
+    // });
     // this.storage.recrypt('thisismyprivatekey');
   }
 
@@ -21,7 +21,7 @@ class PersistanceHelper {
       //   keychainService: 'myKeychain',
       // });
 
-      const value = this.storage.getString(key);
+      // const value = this.storage.getString(key);
 
       if (value !== null) {
         // value previously stored
@@ -40,7 +40,7 @@ class PersistanceHelper {
       //   sharedPreferencesName: 'mySharedPrefs',
       //   keychainService: 'myKeychain',
       // });
-      this.storage.set(key, value);
+      // this.storage.set(key, value);
     } catch (e) {
       // saving error
       console.log(e);
