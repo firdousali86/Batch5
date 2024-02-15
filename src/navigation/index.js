@@ -28,13 +28,11 @@ const Navigation = props => {
   const navigation = useNavigation();
 
   const [isLoggedIn, setIsLoggedIn] = useState(
-    user.data?.created && user.data?.ttl && user.data?.userId ? true : false,
+    user.data?.accessToken ? true : false,
   );
 
   useEffect(() => {
-    setIsLoggedIn(
-      user.data?.created && user.data?.ttl && user.data?.userId ? true : false,
-    );
+    setIsLoggedIn(user.data?.accessToken ? true : false);
   }, [user]);
 
   const renderMainStack = () => {

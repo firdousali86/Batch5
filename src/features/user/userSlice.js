@@ -21,6 +21,11 @@ export const userSlice = createSlice({
     success: (state, action) => {
       state.isFetching = false;
       state.data = action.payload;
+
+      if (action.payload.userId && action.payload.ttl && action.payload.id) {
+        state.data.accessToken = action.payload.id;
+      }
+
       state.failure = false;
       state.errorMessage = undefined;
     },
