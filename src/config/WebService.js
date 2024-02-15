@@ -1,6 +1,8 @@
 export const kApiUrl = 'http://localhost:3000/api'; //'https://jsonplaceholder.typicode.com';
 export const kApiTodos = '/todos';
 export const kApiGetItems = '/items';
+export const kApiSignup = '/Users';
+export const kApiLogin = '/Users/login';
 
 export const ERROR_NETWORK_NOT_AVAILABLE = {
   title: 'Oops!',

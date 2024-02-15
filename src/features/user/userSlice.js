@@ -4,6 +4,9 @@ export const userSlice = createSlice({
   name: 'user',
   initialState: {
     data: {},
+    isFetching: false,
+    failure: false,
+    errorMessage: undefined,
   },
   reducers: {
     login: (state, action) => {
@@ -12,10 +15,24 @@ export const userSlice = createSlice({
     logout: state => {
       state.data = {};
     },
+    request: state => {
+      state.isFetching = true;
+    },
+    success: (state, action) => {
+      state.isFetching = false;
+      state.data = action.payload;
+      state.failure = false;
+      state.errorMessage = undefined;
+    },
+    failure: (state, action) => {
+      state.isFetching = false;
+      state.failure = true;
+      state.errorMessage = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const {login, logout} = userSlice.actions;
+export const {login, logout, request, success, failure} = userSlice.actions;
 
 export default userSlice.reducer;

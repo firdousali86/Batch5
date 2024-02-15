@@ -7,8 +7,9 @@ import {
   Button,
 } from 'react-native';
 import React, {useState} from 'react';
-import {login} from '../../features/user/userSlice';
+import {login, request} from '../../features/user/userSlice';
 import {useDispatch} from 'react-redux';
+import {kApiLogin} from '../../config/WebService';
 
 const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -25,6 +26,7 @@ const LoginScreen = ({navigation}) => {
         }}
         placeholder="Enter Email"
         style={styles.textInput}
+        autoCapitalize="none"
       />
       <TextInput
         value={password}
@@ -33,11 +35,12 @@ const LoginScreen = ({navigation}) => {
         }}
         placeholder="Enter Password"
         style={styles.textInput}
+        autoCapitalize="none"
       />
 
       <TouchableOpacity
         onPress={() => {
-          dispatch(login({email, password}));
+          dispatch(request({url: kApiLogin, data: {email, password}}));
         }}>
         <Text>Login</Text>
       </TouchableOpacity>

@@ -27,10 +27,14 @@ const Navigation = props => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
 
-  const [isLoggedIn, setIsLoggedIn] = useState(user.data.email ? true : false);
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    user.data?.created && user.data?.ttl && user.data?.userId ? true : false,
+  );
 
   useEffect(() => {
-    setIsLoggedIn(user.data?.email ? true : false);
+    setIsLoggedIn(
+      user.data?.created && user.data?.ttl && user.data?.userId ? true : false,
+    );
   }, [user]);
 
   const renderMainStack = () => {
@@ -108,7 +112,7 @@ const Navigation = props => {
 
   return (
     <Stack.Navigator>
-      {true ? renderMainStack() : renderAuthStack()}
+      {isLoggedIn ? renderMainStack() : renderAuthStack()}
     </Stack.Navigator>
   );
 };
