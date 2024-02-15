@@ -24,6 +24,10 @@ class DataHelper {
     console.log(this.store.getState().counter);
     console.log('============');
   };
+
+  getAccessToken = () => {
+    return this.store.getState().user?.data?.accessToken;
+  };
 }
 
 export default new DataHelper();

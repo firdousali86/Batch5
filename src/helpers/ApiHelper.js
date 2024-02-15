@@ -26,7 +26,7 @@ class ApiHelper {
 
   post = async (url, data, headers) => {
     try {
-      const response = await api.post(url, data, {});
+      const response = await api.post(url, data, {headers: headers});
 
       return new Promise((resolve, reject) => {
         this.handlePromise(resolve, reject, response);
