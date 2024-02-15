@@ -1,6 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {addToCart} from '../cart/cartSlice';
 
 const initialState = {
+  data: [],
   items: [],
   isFetching: false,
   failure: false,
@@ -25,6 +27,15 @@ export const itemSlice = createSlice({
       state.failure = true;
       state.errorMessage = action.payload;
     },
+  },
+  extraReducers: builder => {
+    builder.addCase(addToCart, (state, action) => {
+      if (!state.data) {
+        state.data = [action.payload];
+      } else {
+        state.data.push(action.payload);
+      }
+    });
   },
 });
 

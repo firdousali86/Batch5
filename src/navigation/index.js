@@ -38,7 +38,6 @@ const Navigation = props => {
   const renderMainStack = () => {
     return (
       <Stack.Group>
-        <Stack.Screen name="TestSagaScreen" component={TestSagaScreen} />
         <Stack.Screen
           name="ReduxClassScreen"
           component={ReduxClassScreen}
@@ -53,6 +52,8 @@ const Navigation = props => {
             ),
           }}
         />
+        <Stack.Screen name="TestSagaScreen" component={TestSagaScreen} />
+
         <Stack.Screen
           name="ReduxScreen"
           component={ReduxScreen}
