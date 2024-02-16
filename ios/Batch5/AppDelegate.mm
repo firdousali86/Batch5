@@ -9,7 +9,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [FIRApp configure];
-  [GMSServices provideAPIKey:@"AIzaSyB4uOPrlEUJjx-tCcPm7BY5fn1gLwtB4BA"];
+  [GMSServices provideAPIKey:@"AIzaSyDsboOCoycUStdryVIYuYhixHoT_z2m4fY"];
 
   self.moduleName = @"Batch5";
   // You can add your custom initial props in the dictionary below.
