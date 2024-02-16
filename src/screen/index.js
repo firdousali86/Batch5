@@ -11,6 +11,7 @@ import ReduxScreen from './ReduxScreen';
 import CartScreen from './CartScreen';
 import ReduxClassScreen from './ReduxClassScreen';
 import TestSagaScreen from './TestSagaScreen';
+import TestRTKQuery from './TestRTKQuery';
 
 export {
   HomeScreen,
@@ -26,4 +27,5 @@ export {
   CartScreen,
   ReduxClassScreen,
   TestSagaScreen,
+  TestRTKQuery,
 };

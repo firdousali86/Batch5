@@ -17,6 +17,7 @@ import {
   CartScreen,
   ReduxClassScreen,
   TestSagaScreen,
+  TestRTKQuery,
 } from '../screen';
 import {clearCart} from '../features/cart/cartSlice';
 
@@ -38,6 +39,7 @@ const Navigation = props => {
   const renderMainStack = () => {
     return (
       <Stack.Group>
+        <Stack.Screen name="TestRTKQuery" component={TestRTKQuery} />
         <Stack.Screen
           name="ReduxClassScreen"
           component={ReduxClassScreen}
