@@ -18,6 +18,7 @@ import {
   ReduxClassScreen,
   TestSagaScreen,
   TestRTKQuery,
+  MapScreen,
 } from '../screen';
 import {clearCart} from '../features/cart/cartSlice';
 
@@ -39,6 +40,7 @@ const Navigation = props => {
   const renderMainStack = () => {
     return (
       <Stack.Group>
+        <Stack.Screen name="MapScreen" component={MapScreen} />
         <Stack.Screen name="TestRTKQuery" component={TestRTKQuery} />
         <Stack.Screen
           name="ReduxClassScreen"
@@ -113,7 +115,7 @@ const Navigation = props => {
 
   return (
     <Stack.Navigator>
-      {isLoggedIn ? renderMainStack() : renderAuthStack()}
+      {true ? renderMainStack() : renderAuthStack()}
     </Stack.Navigator>
   );
 };

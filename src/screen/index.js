@@ -12,6 +12,7 @@ import CartScreen from './CartScreen';
 import ReduxClassScreen from './ReduxClassScreen';
 import TestSagaScreen from './TestSagaScreen';
 import TestRTKQuery from './TestRTKQuery';
+import MapScreen from './MapScreen';
 
 export {
   HomeScreen,
@@ -28,4 +29,5 @@ export {
   ReduxClassScreen,
   TestSagaScreen,
   TestRTKQuery,
+  MapScreen,
 };
