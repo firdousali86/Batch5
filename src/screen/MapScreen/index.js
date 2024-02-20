@@ -1,8 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Platform, Alert } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
-import { LocationHelper } from '../../helpers';
-const MapScreen = () => {
+import { LocationHelper, PermissionHelper } from '../../helpers';
+import messaging from '@react-native-firebase/messaging';
+import NotificationHelper from '../../helpers/NotificationHelper';
+
+
+const MapScreen = (props) => {
 
   const locations = [
     {
@@ -25,6 +29,10 @@ const MapScreen = () => {
   const [currentLocation, setCurrentLocation] = useState(null)
 
   useEffect(() => {
+    PermissionHelper.requestLocationPermissionForAndroid()
+    // Platform.OS == 'ios' ?
+    //   PermissionHelper.rquestNotificationPermissionForiOS() :
+    //   PermissionHelper.requestNotificationPermissionForAndorid()
     // LocationHelper.getCurrentLocation((postion) => {
     //   setCurrentLocation(postion)
     // })
@@ -32,6 +40,29 @@ const MapScreen = () => {
       setCurrentLocation(position)
     })
   }, [])
+
+  const loadToken = async () => {
+    let token = await NotificationHelper.getDeviceToken()
+    console.log(token)
+  }
+
+  useEffect(() => {
+    loadToken()
+    const unsubscribe = messaging().onMessage(async remoteMessage => {
+      // Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
+      if (remoteMessage.data.route == 'Home') {
+        props.navigation.navigate('Home')
+      }
+    });
+
+
+    messaging().setBackgroundMessageHandler(async remoteMessage => {
+      console.log('Message handled in the background!', remoteMessage);
+    });
+
+
+    return unsubscribe;
+  }, []);
 
   return (
     <View style={styles.container}>
