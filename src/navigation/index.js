@@ -1,8 +1,8 @@
-import {StyleSheet, Text, View, Button} from 'react-native';
-import React, {useState, useEffect} from 'react';
-import {useNavigation} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {useDispatch, useSelector} from 'react-redux';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   HomeScreen,
   DetailsScreen,
@@ -20,7 +20,7 @@ import {
   TestRTKQuery,
   MapScreen,
 } from '../screen';
-import {clearCart} from '../features/cart/cartSlice';
+import { clearCart } from '../features/cart/cartSlice';
 
 const Stack = createNativeStackNavigator();
 
@@ -40,6 +40,7 @@ const Navigation = props => {
   const renderMainStack = () => {
     return (
       <Stack.Group>
+        <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="MapScreen" component={MapScreen} />
         <Stack.Screen name="TestRTKQuery" component={TestRTKQuery} />
         <Stack.Screen
@@ -90,7 +91,6 @@ const Navigation = props => {
         <Stack.Screen name="UseRefTestScreen" component={UseRefTestScreen} />
         <Stack.Screen name="PropDrilling" component={PropDrillingScreen} />
         <Stack.Screen name="UserProfile" component={UserProfileScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="LifecyclePrac" component={LifecyclePracScreen} />
         <Stack.Screen
           name="Details"

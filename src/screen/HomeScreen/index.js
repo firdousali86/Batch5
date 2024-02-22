@@ -1,11 +1,12 @@
-import {useEffect} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import { useEffect } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 import TestLayout from '../../components/TestLayout';
-
 import styles from './styles';
+import { AnalyticsHelper } from '../../helpers';
+
 
 const HomePageScreen = props => {
-  const {navigation, route} = props;
+  const { navigation, route } = props;
 
   useEffect(() => {
     if (route.params) {
@@ -32,6 +33,14 @@ const HomePageScreen = props => {
         }}
         style={styles.button1}>
         <Text>Push Details Screen</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.push('MapScreen');
+          AnalyticsHelper.mapScreenEvent()
+        }}
+        style={styles.button1}>
+        <Text>Go to maps</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
