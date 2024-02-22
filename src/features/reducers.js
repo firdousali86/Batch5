@@ -3,6 +3,7 @@ import counterSlice from './counter/counterSlice';
 import userSlice from './user/userSlice';
 import itemSlice from './item/itemSlice';
 import {itemApi} from '../services/itemApi';
+import movieSlice from './movie/movieSlice';
 
 export default {
   cart: cartSlice,
@@ -10,4 +11,5 @@ export default {
   counter: counterSlice,
   item: itemSlice,
   itemApi: itemApi.reducer,
+  movie: movieSlice,
 };

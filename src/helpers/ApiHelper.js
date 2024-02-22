@@ -1,12 +1,13 @@
 import {create} from 'apisauce';
 import {
   kApiUrl,
+  kApiUrl2,
   ERROR_NETWORK_NOT_AVAILABLE,
   ERROR_WRONG_CREDENTIALS,
 } from '../config/WebService';
 
 const api = create({
-  baseURL: kApiUrl,
+  baseURL: kApiUrl2,
   headers: {'Content-Type': 'application/json', Accept: 'application/json'},
 });
 class ApiHelper {
@@ -14,7 +15,7 @@ class ApiHelper {
 
   get = async (url, data, headers) => {
     try {
-      const response = await api.get(url, data, {});
+      const response = await api.get(url, data, {headers: headers});
 
       return new Promise((resolve, reject) => {
         this.handlePromise(resolve, reject, response);

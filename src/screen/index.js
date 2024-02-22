@@ -13,6 +13,7 @@ import ReduxClassScreen from './ReduxClassScreen';
 import TestSagaScreen from './TestSagaScreen';
 import TestRTKQuery from './TestRTKQuery';
 import MapScreen from './MapScreen';
+import TestSSLPinning from './TestSSLPinning';
 
 export {
   HomeScreen,
@@ -30,4 +31,5 @@ export {
   TestSagaScreen,
   TestRTKQuery,
   MapScreen,
+  TestSSLPinning,
 };

@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, Button } from 'react-native';
-import React, { useState, useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useDispatch, useSelector } from 'react-redux';
+import {StyleSheet, Text, View, Button} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {useDispatch, useSelector} from 'react-redux';
 import {
   HomeScreen,
   DetailsScreen,
@@ -19,8 +19,9 @@ import {
   TestSagaScreen,
   TestRTKQuery,
   MapScreen,
+  TestSSLPinning,
 } from '../screen';
-import { clearCart } from '../features/cart/cartSlice';
+import {clearCart} from '../features/cart/cartSlice';
 
 const Stack = createNativeStackNavigator();
 
@@ -40,6 +41,7 @@ const Navigation = props => {
   const renderMainStack = () => {
     return (
       <Stack.Group>
+        <Stack.Screen name="TestSSLPinning" component={TestSSLPinning} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="MapScreen" component={MapScreen} />
         <Stack.Screen name="TestRTKQuery" component={TestRTKQuery} />
