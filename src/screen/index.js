@@ -14,6 +14,7 @@ import TestSagaScreen from './TestSagaScreen';
 import TestRTKQuery from './TestRTKQuery';
 import MapScreen from './MapScreen';
 import TestSSLPinning from './TestSSLPinning';
+import TestHOCScreen from './TestHOCScreen';
 
 export {
   HomeScreen,
@@ -32,4 +33,5 @@ export {
   TestRTKQuery,
   MapScreen,
   TestSSLPinning,
+  TestHOCScreen,
 };
