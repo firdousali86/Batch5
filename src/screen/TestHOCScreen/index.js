@@ -1,23 +1,24 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
-import useFetchMovies from '../../hooks/useFetchMovies';
+import {StyleSheet, Text, View, TextInput} from 'react-native';
+import React, {useState} from 'react';
+import WithDataFetching from './WithDataFetching';
 
-const TestHOCScreen = () => {
-  const {movies, loading, error} = useFetchMovies(
-    'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1',
-  );
+const TestHOCScreen = ({data, loading, error}) => {
+  const [textinput, settextinput] = useState('');
 
   console.log('===============');
-  console.log(movies);
+  console.log(data);
   console.log('===============');
 
   return (
     <View>
       <Text>index</Text>
+      <TextInput value={textinput} onChangeText={settextinput} placeholder="" />
     </View>
   );
 };
 
-export default TestHOCScreen;
+export default WithDataFetching(
+  'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1',
+)(TestHOCScreen);
 
 const styles = StyleSheet.create({});

@@ -1,11 +1,15 @@
 import {useState, useEffect} from 'react';
 
 const useFetchMovies = url => {
+  console.log('custom hook body');
+
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    console.log('custom hook useeffect');
+
     fetch(url, {
       method: 'GET',
       headers: {
