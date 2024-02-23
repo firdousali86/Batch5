@@ -21,6 +21,9 @@ import {
   MapScreen,
 } from '../screen';
 import { clearCart } from '../features/cart/cartSlice';
+import auth from '@react-native-firebase/auth';
+
+
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +35,19 @@ const Navigation = props => {
   const [isLoggedIn, setIsLoggedIn] = useState(
     user.data?.accessToken ? true : false,
   );
+  const [firebaseUser, setFirebaseUser] = useState(null);
+
+  //Firebase auth listener
+  function onAuthStateChanged(user) {
+    console.log(user)
+    setFirebaseUser(user);
+    // if (initializing) setInitializing(false);
+  }
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
 
   useEffect(() => {
     setIsLoggedIn(user.data?.accessToken ? true : false);
@@ -115,7 +131,8 @@ const Navigation = props => {
 
   return (
     <Stack.Navigator>
-      {true ? renderMainStack() : renderAuthStack()}
+      {firebaseUser ? renderMainStack() : renderAuthStack()}
+      {/* {renderAuthStack()} */}
     </Stack.Navigator>
   );
 };

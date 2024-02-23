@@ -3,10 +3,17 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import TestLayout from '../../components/TestLayout';
 import styles from './styles';
 import { AnalyticsHelper } from '../../helpers';
+import auth from '@react-native-firebase/auth';
 
 
 const HomePageScreen = props => {
   const { navigation, route } = props;
+
+  const onFirebaseSignedOut = () => {
+    auth()
+      .signOut()
+      .then(() => console.log('User signed out!'));
+  }
 
   useEffect(() => {
     if (route.params) {
@@ -35,12 +42,13 @@ const HomePageScreen = props => {
         <Text>Push Details Screen</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => {
-          navigation.push('MapScreen');
-          AnalyticsHelper.mapScreenEvent()
-        }}
+        // onPress={() => {
+        //   navigation.push('MapScreen');
+        //   AnalyticsHelper.mapScreenEvent()
+        // }}
+        onPress={()=>onFirebaseSignedOut()}
         style={styles.button1}>
-        <Text>Go to maps</Text>
+        <Text>Sign out</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
