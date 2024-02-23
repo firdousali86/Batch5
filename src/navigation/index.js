@@ -22,10 +22,21 @@ import {
   TestSSLPinning,
 } from '../screen';
 import {clearCart} from '../features/cart/cartSlice';
+import {addSslPinningErrorListener} from 'react-native-ssl-public-key-pinning';
 
 const Stack = createNativeStackNavigator();
 
 const Navigation = props => {
+  useEffect(() => {
+    const subscription = addSslPinningErrorListener(error => {
+      // Triggered when an SSL pinning error occurs due to pin mismatch
+      console.log(error.serverHostname);
+    });
+    return () => {
+      subscription.remove();
+    };
+  }, []);
+
   const user = useSelector(state => state.user);
   const dispatch = useDispatch();
   const navigation = useNavigation();

@@ -5791,6 +5791,11 @@ react-native-sensitive-info@^5.5.8:
   resolved "https://registry.npmjs.org/react-native-sensitive-info/-/react-native-sensitive-info-5.5.8.tgz"
   integrity sha512-p99oaEW4QG1RdUNrkvd/c6Qdm856dQw/Rk81f9fA6Y3DlPs6ADNdU+jbPuTz3CcOUJwuKBDNenX6LR9KfmGFEg==
 
+react-native-ssl-public-key-pinning@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/react-native-ssl-public-key-pinning/-/react-native-ssl-public-key-pinning-1.1.4.tgz#1e77fca64772c133016c68bac0236d8d1e038011"
+  integrity sha512-k2OtqpExjIo8H8vJ8+yUYTHaEyl1Qn/HiWT1UqpfyqgF2rz5VR1Fq+TdSuPqg+n1STQtXAKEua+L1fidJ8UWQw==
+
 react-native@0.72.6:
   version "0.72.6"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.72.6.tgz"
