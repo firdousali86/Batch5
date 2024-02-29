@@ -53,6 +53,7 @@ const Navigation = props => {
   const renderMainStack = () => {
     return (
       <Stack.Group>
+        <Stack.Screen name="UseRefTestScreen" component={UseRefTestScreen} />
         <Stack.Screen name="TestHOCScreen" component={TestHOCScreen} />
         <Stack.Screen name="TestSSLPinning" component={TestSSLPinning} />
         <Stack.Screen name="Home" component={HomeScreen} />
@@ -103,7 +104,7 @@ const Navigation = props => {
           }}
         />
         <Stack.Screen name="FetchScreen" component={FetchScreen} />
-        <Stack.Screen name="UseRefTestScreen" component={UseRefTestScreen} />
+
         <Stack.Screen name="PropDrilling" component={PropDrillingScreen} />
         <Stack.Screen name="UserProfile" component={UserProfileScreen} />
         <Stack.Screen name="LifecyclePrac" component={LifecyclePracScreen} />

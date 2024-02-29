@@ -1,10 +1,13 @@
 import {StyleSheet, Text, View, TextInput, Button} from 'react-native';
 import React, {useRef, useState} from 'react';
+import {MapControl} from '../../components';
 
 const UseRefTestScreen = () => {
   const input1Ref = useRef(null);
   const input2Ref = useRef(null);
   const input3Ref = useRef(null);
+
+  const mymapcontrolref = useRef(null);
 
   const [datetime, setdatetime] = useState(Date.now());
 
@@ -13,7 +16,7 @@ const UseRefTestScreen = () => {
   console.log('use ref screen rerender');
 
   return (
-    <View>
+    <View style={{flex: 1}}>
       <Text>index</Text>
 
       <TextInput
@@ -47,6 +50,21 @@ const UseRefTestScreen = () => {
           console.log(counterVar.current);
 
           setdatetime(Date.now());
+        }}
+      />
+      <MapControl ref={mymapcontrolref} />
+      <Button
+        title={'Goto london'}
+        onPress={() => {
+          //do something to navigate map to london
+          mymapcontrolref.current?.takemetolondon();
+        }}
+      />
+      <Button
+        title={'Goto karachi'}
+        onPress={() => {
+          //do something to navigate map to london
+          mymapcontrolref.current?.takemetokarachi();
         }}
       />
     </View>
