@@ -1,12 +1,13 @@
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import Navigation from './navigation';
 import ApiHelper from './helpers/ApiHelper';
-import {useEffect, useState} from 'react';
-import {store, persistor} from './store';
-import {Provider} from 'react-redux';
+import { useEffect, useState } from 'react';
+import { store, persistor } from './store';
+import { Provider } from 'react-redux';
 import ErrorBoundary from './components/ErrorBoundary';
-import {PersistGate} from 'redux-persist/integration/react';
-import {DataHelper} from './helpers';
+import { PersistGate } from 'redux-persist/integration/react';
+import { DataHelper } from './helpers';
+
 
 import * as Keychain from 'react-native-keychain';
 

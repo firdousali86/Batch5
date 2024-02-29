@@ -4,6 +4,8 @@ import PersistanceHelper from './PersistanceHelper';
 import LocationHelper from './LocationHelper';
 import PermissionHelper from './PermissionHelper'
 import AnalyticsHelper from './AnalyticsHelper';
+import FirestoreHelper from './FirestoreHelper';
+
 
 export {
     DataHelper,
@@ -11,5 +13,6 @@ export {
     PersistanceHelper,
     LocationHelper,
     PermissionHelper,
-    AnalyticsHelper
+    AnalyticsHelper,
+    FirestoreHelper
 };

@@ -19,6 +19,7 @@ import {
   TestSagaScreen,
   TestRTKQuery,
   MapScreen,
+  FirestoreUsersScreen
 } from '../screen';
 import { clearCart } from '../features/cart/cartSlice';
 import auth from '@react-native-firebase/auth';
@@ -107,6 +108,7 @@ const Navigation = props => {
         <Stack.Screen name="UseRefTestScreen" component={UseRefTestScreen} />
         <Stack.Screen name="PropDrilling" component={PropDrillingScreen} />
         <Stack.Screen name="UserProfile" component={UserProfileScreen} />
+        <Stack.Screen name="FirestoreUsersScreen" component={FirestoreUsersScreen} />
         <Stack.Screen name="LifecyclePrac" component={LifecyclePracScreen} />
         <Stack.Screen
           name="Details"

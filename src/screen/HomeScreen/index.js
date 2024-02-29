@@ -26,6 +26,13 @@ const HomePageScreen = props => {
       <TestLayout />
       <TouchableOpacity
         onPress={() => {
+          navigation.navigate('FirestoreUsersScreen');
+        }}
+        style={styles.button1}>
+        <Text>Navigate Firebase Users</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
           navigation.navigate('Details', {
             sessionName: 'React Native',
             BatchNumber: 5,
@@ -46,7 +53,7 @@ const HomePageScreen = props => {
         //   navigation.push('MapScreen');
         //   AnalyticsHelper.mapScreenEvent()
         // }}
-        onPress={()=>onFirebaseSignedOut()}
+        onPress={() => onFirebaseSignedOut()}
         style={styles.button1}>
         <Text>Sign out</Text>
       </TouchableOpacity>
