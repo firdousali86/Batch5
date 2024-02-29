@@ -1,5 +1,6 @@
 export const kApiUrl = 'http://localhost:3000/api'; //'https://jsonplaceholder.typicode.com';
 export const kApiUrl2 = 'https://api.themoviedb.org';
+export const kApiUrl3 = 'https://jsonplaceholder.typicode.com';
 export const kApiTodos = '/todos';
 export const kApiGetItems = '/items';
 export const kApiPostItems = '/items';

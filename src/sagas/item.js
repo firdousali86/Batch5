@@ -21,14 +21,12 @@ function* watchRequest() {
       if (payload.method === 'POST') {
         const accessToken = yield select(state => state.user.data.accessToken);
 
-        response = yield call(callPostRequest, payload.url, payload.data, {
-          'X-Access-Token': accessToken,
-        });
+        response = yield call(callPostRequest, payload.url, payload.data);
       } else {
         response = yield call(callGetRequest, payload.url, {});
       }
 
-      yield put(success(response));
+      yield put(success(response.data));
     } catch (ex) {
       yield put(failure(ex));
     }

@@ -16,6 +16,12 @@ export const itemSlice = createSlice({
     request: state => {
       state.isFetching = true;
     },
+    requestEvery: state => {
+      state.isFetching = true;
+    },
+    requestLatest: state => {
+      state.isFetching = true;
+    },
     success: (state, action) => {
       state.isFetching = false;
       state.items = action.payload;
@@ -39,6 +45,7 @@ export const itemSlice = createSlice({
   },
 });
 
-export const {request, success, failure} = itemSlice.actions;
+export const {request, requestEvery, requestLatest, success, failure} =
+  itemSlice.actions;
 
 export default itemSlice.reducer;

@@ -1,9 +1,13 @@
 import {StyleSheet, Text, View, Button, TextInput} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
-import {request} from '../../features/item/itemSlice';
+import {
+  request,
+  requestEvery,
+  requestLatest,
+} from '../../features/item/itemSlice';
 import {logout} from '../../features/user/userSlice';
-import {kApiGetItems, kApiPostItems} from '../../config/WebService';
+import {kApiGetItems, kApiPostItems, kApiTodos} from '../../config/WebService';
 
 const TestSagaScreen = () => {
   const dispatch = useDispatch();
@@ -54,9 +58,21 @@ const TestSagaScreen = () => {
         }}
       />
       <Button
-        title={'Call Get Api'}
+        title={'Call Take Items'}
         onPress={() => {
-          dispatch(request({url: kApiGetItems, method: 'GET'}));
+          dispatch(request({url: kApiTodos, method: 'GET'}));
+        }}
+      />
+      <Button
+        title={'Call TakeEvery Items'}
+        onPress={() => {
+          dispatch(requestEvery({url: kApiTodos, method: 'GET'}));
+        }}
+      />
+      <Button
+        title={'Call TakeLatest Items'}
+        onPress={() => {
+          dispatch(requestLatest({url: kApiTodos, method: 'GET'}));
         }}
       />
       <Button
