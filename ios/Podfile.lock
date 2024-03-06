@@ -566,6 +566,9 @@ PODS:
     - FirebaseCoreExtension (= 10.20.0)
     - React-Core
     - RNFBApp
+  - RNGestureHandler (2.15.0):
+    - RCT-Folly (= 2021.07.22.00)
+    - React-Core
   - RNKeychain (8.1.2):
     - React-Core
   - RNScreens (3.29.0):
@@ -625,6 +628,7 @@ DEPENDENCIES:
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBCrashlytics (from `../node_modules/@react-native-firebase/crashlytics`)"
   - "RNFBMessaging (from `../node_modules/@react-native-firebase/messaging`)"
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNKeychain (from `../node_modules/react-native-keychain`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -749,6 +753,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/crashlytics"
   RNFBMessaging:
     :path: "../node_modules/@react-native-firebase/messaging"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
   RNKeychain:
     :path: "../node_modules/react-native-keychain"
   RNScreens:
@@ -823,6 +829,7 @@ SPEC CHECKSUMS:
   RNFBApp: a4f5b074984cf612e4c97d68b42be690c59e2638
   RNFBCrashlytics: a88c315ab5b6cb2b8a3f56390cd63b2dfd5ec05a
   RNFBMessaging: 1e7415390ae579c5949505a0709686a2de8a47e5
+  RNGestureHandler: 6a0bca5c5b2fb62211e9a75d5f4ed877817c4412
   RNKeychain: a65256b6ca6ba6976132cc4124b238a5b13b3d9c
   RNScreens: 1c2444658fbb696a094272d946708167b1f63409
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17

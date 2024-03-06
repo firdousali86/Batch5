@@ -1,7 +1,7 @@
 import {NavigationContainer} from '@react-navigation/native';
 import Navigation from './navigation';
 import ApiHelper from './helpers/ApiHelper';
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {store, persistor} from './store';
 import {Provider} from 'react-redux';
 import ErrorBoundary from './components/ErrorBoundary';
