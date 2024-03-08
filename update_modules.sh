@@ -1,0 +1,1 @@
+cp scripts/GeolocationService/Geolocation.js node_modules/react-native-geolocation-service/js/
