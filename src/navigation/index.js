@@ -22,6 +22,8 @@ import {
   TestSSLPinning,
   TestHOCScreen,
 } from '../screen';
+import ReactTestScreen from '../screen/ReactTestScreen';
+import ReactTestScreen2 from '../screen/ReactTestScreen2';
 import {clearCart} from '../features/cart/cartSlice';
 import {addSslPinningErrorListener} from 'react-native-ssl-public-key-pinning';
 
@@ -53,6 +55,8 @@ const Navigation = props => {
   const renderMainStack = () => {
     return (
       <Stack.Group>
+        <Stack.Screen name="ReactTestScreen" component={ReactTestScreen} />
+        <Stack.Screen name="ReactTestScreen2" component={ReactTestScreen2} />
         <Stack.Screen name="TestSagaScreen" component={TestSagaScreen} />
         <Stack.Screen name="UseRefTestScreen" component={UseRefTestScreen} />
         <Stack.Screen name="TestHOCScreen" component={TestHOCScreen} />

@@ -15,6 +15,7 @@ import TestRTKQuery from './TestRTKQuery';
 import MapScreen from './MapScreen';
 import TestSSLPinning from './TestSSLPinning';
 import TestHOCScreen from './TestHOCScreen';
+// import ReactTestScreen from './ReactTestScreen';
 
 export {
   HomeScreen,
@@ -34,4 +35,5 @@ export {
   MapScreen,
   TestSSLPinning,
   TestHOCScreen,
+  // ReactTestScreen,
 };
