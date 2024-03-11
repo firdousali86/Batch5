@@ -1,5 +1,5 @@
 #import "AppDelegate.h"
-#import <Firebase.h>
+// #import <Firebase.h>
 #import <GoogleMaps/GoogleMaps.h>
 
 #import <React/RCTBundleURLProvider.h>
@@ -8,7 +8,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [FIRApp configure];
+  // [FIRApp configure];
   [GMSServices provideAPIKey:@"AIzaSyDsboOCoycUStdryVIYuYhixHoT_z2m4fY"];
 
   self.moduleName = @"Batch5";
