@@ -8,6 +8,7 @@ import {
 } from '../../features/item/itemSlice';
 import {logout} from '../../features/user/userSlice';
 import {kApiGetItems, kApiPostItems, kApiTodos} from '../../config/WebService';
+import ReactTestingComponent from '../../components/ReactTestingComponent';
 
 const TestSagaScreen = () => {
   const dispatch = useDispatch();
@@ -81,6 +82,7 @@ const TestSagaScreen = () => {
           dispatch(logout());
         }}
       />
+      <ReactTestingComponent />
     </View>
   );
 };
