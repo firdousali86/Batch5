@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1210"
+   LastUpgradeVersion = "1430"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -10,13 +10,13 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;cp &quot;${PROJECT_DIR}/../.env.production&quot; &quot;${PROJECT_DIR}/../.env&quot;&#10;">
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;cp &quot;${PROJECT_DIR}/../.env.development&quot; &quot;${PROJECT_DIR}/../.env&quot;&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-                     BuildableName = "Batch5.app"
-                     BlueprintName = "Batch5"
+                     BlueprintIdentifier = "04582C4F2BA0AEAC00BDD479"
+                     BuildableName = "Batch5Dev.app"
+                     BlueprintName = "Batch5Dev"
                      ReferencedContainer = "container:Batch5.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
@@ -32,9 +32,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Batch5.app"
-               BlueprintName = "Batch5"
+               BlueprintIdentifier = "04582C4F2BA0AEAC00BDD479"
+               BuildableName = "Batch5Dev.app"
+               BlueprintName = "Batch5Dev"
                ReferencedContainer = "container:Batch5.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,19 +44,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "Batch5Tests.xctest"
-               BlueprintName = "Batch5Tests"
-               ReferencedContainer = "container:Batch5.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -73,13 +62,13 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;cp &quot;${PROJECT_DIR}/../.env.production&quot; &quot;${PROJECT_DIR}/../.env&quot;&#10;">
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;cp &quot;${PROJECT_DIR}/../.env.development&quot; &quot;${PROJECT_DIR}/../.env&quot;&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-                     BuildableName = "Batch5.app"
-                     BlueprintName = "Batch5"
+                     BlueprintIdentifier = "04582C4F2BA0AEAC00BDD479"
+                     BuildableName = "Batch5Dev.app"
+                     BlueprintName = "Batch5Dev"
                      ReferencedContainer = "container:Batch5.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
@@ -90,9 +79,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Batch5.app"
-            BlueprintName = "Batch5"
+            BlueprintIdentifier = "04582C4F2BA0AEAC00BDD479"
+            BuildableName = "Batch5Dev.app"
+            BlueprintName = "Batch5Dev"
             ReferencedContainer = "container:Batch5.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -107,9 +96,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Batch5.app"
-            BlueprintName = "Batch5"
+            BlueprintIdentifier = "04582C4F2BA0AEAC00BDD479"
+            BuildableName = "Batch5Dev.app"
+            BlueprintName = "Batch5Dev"
             ReferencedContainer = "container:Batch5.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

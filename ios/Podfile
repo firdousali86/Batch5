@@ -25,7 +25,16 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'Batch5' do
+abstract_target 'Batch5CommonPods' do
+
+  target 'Batch5Dev' do
+  end
+ 
+  target 'Batch5Stg' do
+  end
+ 
+  target 'Batch5' do
+  end
 
   rn_maps_path = '../node_modules/react-native-maps'
   pod 'react-native-google-maps', :path => rn_maps_path

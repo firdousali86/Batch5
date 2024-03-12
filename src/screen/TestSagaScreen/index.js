@@ -8,6 +8,7 @@ import {
 } from '../../features/item/itemSlice';
 import {logout} from '../../features/user/userSlice';
 import {kApiGetItems, kApiPostItems, kApiTodos} from '../../config/WebService';
+import Config from 'react-native-config';
 
 const TestSagaScreen = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,8 @@ const TestSagaScreen = () => {
 
   return (
     <View>
+      <Text>{Config.ENV}</Text>
+      <Text>{Config.API_URL}</Text>
       <TextInput
         value={title}
         onChangeText={ct => {
