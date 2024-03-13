@@ -1,5 +1,5 @@
 import {PermissionsAndroid} from 'react-native';
-// import messaging from '@react-native-firebase/messaging';
+import messaging from '@react-native-firebase/messaging';
 
 class PermissionHelper {
   constructor() {
@@ -28,13 +28,13 @@ class PermissionHelper {
   };
 
   rquestNotificationPermissionForiOS = async () => {
-    // const authStatus = await messaging().requestPermission();
-    // const enabled =
-    //     authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
-    //     authStatus === messaging.AuthorizationStatus.PROVISIONAL;
-    // if (enabled) {
-    //     console.log('Authorization status:', authStatus);
-    // }
+    const authStatus = await messaging().requestPermission();
+    const enabled =
+      authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+      authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+    if (enabled) {
+      console.log('Authorization status:', authStatus);
+    }
   };
 
   requestNotificationPermissionForAndorid = async () => {

@@ -1,4 +1,4 @@
-// import messaging from '@react-native-firebase/messaging';
+import messaging from '@react-native-firebase/messaging';
 
 class NotificationHelper {
   constructor() {
@@ -6,9 +6,9 @@ class NotificationHelper {
   }
 
   getDeviceToken = async () => {
-    // await messaging().registerDeviceForRemoteMessages();
-    // let token = await messaging().getToken();
-    // return token;
+    await messaging().registerDeviceForRemoteMessages();
+    let token = await messaging().getToken();
+    return token;
   };
 }
 

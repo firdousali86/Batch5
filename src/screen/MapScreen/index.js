@@ -2,7 +2,7 @@ import {StyleSheet, Text, View, Platform, Alert} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import {LocationHelper, PermissionHelper} from '../../helpers';
-// import messaging from '@react-native-firebase/messaging';
+import messaging from '@react-native-firebase/messaging';
 import NotificationHelper from '../../helpers/NotificationHelper';
 
 const MapScreen = props => {
@@ -47,16 +47,16 @@ const MapScreen = props => {
 
   useEffect(() => {
     loadToken();
-    // const unsubscribe = messaging().onMessage(async remoteMessage => {
-    //   // Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
-    //   if (remoteMessage.data.route == 'Home') {
-    //     props.navigation.navigate('Home');
-    //   }
-    // });
+    const unsubscribe = messaging().onMessage(async remoteMessage => {
+      // Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
+      if (remoteMessage.data.route == 'Home') {
+        props.navigation.navigate('Home');
+      }
+    });
 
-    // messaging().setBackgroundMessageHandler(async remoteMessage => {
-    //   console.log('Message handled in the background!', remoteMessage);
-    // });
+    messaging().setBackgroundMessageHandler(async remoteMessage => {
+      console.log('Message handled in the background!', remoteMessage);
+    });
 
     return unsubscribe;
   }, []);
