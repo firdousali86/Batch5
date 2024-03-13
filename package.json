@@ -9,12 +9,12 @@
     "start": "react-native start",
     "test": "jest",
     "postinstall": "patch-package",
-    "android:staging": "react-native run-android --variant=stagingdebug",
-    "android:staging-release": "react-native run-android --variant=stagingrelease",
-    "android:dev": "react-native run-android --variant=developmentdebug",
-    "android:dev-release": "react-native run-android --variant=developmentrelease",
-    "android:prod": "react-native run-android --variant=productiondebug",
-    "android:prod-release": "react-native run-android --variant=productionrelease"
+    "android:dev": "cd android && ./gradlew clean && cd .. && npx react-native run-android --variant=developmentDebug --appIdSuffix 'development'",
+    "android:dev-release": "cd android && ./gradlew clean && cd .. && npx react-native run-android --variant=developmentRelease --appIdSuffix 'development'",
+    "android:stage": "cd android && ./gradlew clean && cd .. && npx react-native run-android --variant=stagingDebug --appIdSuffix 'staging'",
+    "android:stage-release": "cd android && ./gradlew clean && cd .. && npx react-native run-android --variant=stagingRelease --appIdSuffix 'staging'",
+    "android:prod": "cd android && ./gradlew clean && cd .. && npx react-native run-android --variant=productionDebug --appIdSuffix 'production'",
+    "android:prod-release": "cd android && ./gradlew clean && cd .. && npx react-native run-android --variant=productionRelease --appIdSuffix 'production'"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.21.0",
